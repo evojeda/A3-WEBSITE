@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --color1: #3A1C1E;
+    --color2: #EDC89A;
+    --color3: #F27329;
+    --color4: #fff;
+    --color5: #102F80;
+    --color6: #FFA925;
+    --color7: #000;
+    --color8: #F2BB16;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color2);
+    font-family: "Balsamiq Sans", sans-serif;
+}
+
+.grid-container{
+    display: grid;
+    height: 100vh;
+    color: yellow;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1.5fr 1.3fr 0.8fr;
+
+    grid-template-areas: "header header header header"
+                         "sidebar main main main"
+                         "sidebar box1 box2 box3"
+                         "box4 box4 box5 box5"
+                         "footer footer footer footer";
+
+    grid-gap: 20px;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    background-color: var(--color1);
+    grid-area: header;
+}
+
+.img-logo {
+    position: absolute;
+    left: 20px;
+}
+
+.img-logo img{
+    width: 100px; 
+    height: auto; 
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    color: var(--color4);
+    list-style: none;
+    display: flex;
+    gap: 60px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:var(--text-color4);
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+
+nav ul li a:hover {
+    color: var(--color3);
+}
+
+.menu-list {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+}
+
+.menu-mobile-icon {
+    display: none; 
+
+}
+
+main{
+    background-color: var(--color5);
+    grid-area: main;
+    border-radius: 20px;
+    
+    padding: 20px; /* Adiciona espaçamento interno */
+    display: flex; /* Torna o main um contêiner flexível */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+
+}
+        
+.descricao h1{
+    font-family: "Baloo Bhaina 2", sans-serif;
+    color: var(--color8);
+    text-align: center; /* Centraliza o texto do h1 */
+}
+    
+    
+.descricao p{
+    font-family: "Balsamiq Sans", sans-serif;
+    color: var(--color4);
+    text-align: center; /* Centraliza o texto dos parágrafos */
+}
+
+.sidebar{
+    background-color: purple;
+    grid-area: sidebar;
+    border-radius: 20px;    
+}
+
+.box1{
+    background-color: rgb(30, 22, 32);
+    grid-area: box1;
+    border-radius: 20px;    
+}
+
+.box2{
+    background-color: rgb(0, 128, 117);
+    grid-area: box2;
+    border-radius: 20px;    
+
+}
+
+.box3{
+    background-color: rgb(128, 0, 0);
+    grid-area: box3;
+    border-radius: 20px;    
+}
+
+.box4{
+    background: rgb(241, 217, 1);
+    grid-area: box4;
+    border-radius: 20px;    
+}
+
+.box5{
+    background: rgb(151, 47, 96);
+    grid-area: box5;
+    border-radius: 20px;    
+}
+
+footer{
+    background-color: black;
+    grid-area: footer;
+}
+
+/* Mobile */
+@media (max-width:320px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 2fr 0.2fr 1.2fr
+                            1.2fr 1.2fr 1fr;
+        grid-template-areas: "header"
+        "sidebar"
+        "main"
+        "box1"
+        "box2"
+        "box3"
+        "box4"
+        "box5"
+        "footer";
+    } 
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        gap: 10px;
+        padding: 10px 0;
+        background-color: var(--color1);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .nav-bar {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+    }
+
+    .menu-list.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .menu-list li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu-list li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        color: var(--color4);
+        text-decoration: none;
+    }
+    
+    .menu-mobile-icon {
+        display: block;
+    }
+    
+    .menu-mobile-icon img {
+        width: 30px;
+        height: auto;
+    }
+
+    .menu-mobile-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 2fr 0.2fr 1.2fr
+                            1.2fr 1.2fr 1fr;
+        grid-template-areas: "header"
+        "sidebar"
+        "main"
+        "box1"
+        "box2"
+        "box3"
+        "box4"
+        "box5"
+        "footer";
+    } 
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        gap: 10px;
+        padding: 10px 0;
+        background-color: var(--color1);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .nav-bar {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+    }
+
+    .menu-list.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .menu-list li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu-list li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        color: var(--color4);
+        text-decoration: none;
+    }
+    
+    .menu-mobile-icon {
+        display: block;
+    }
+    
+    .menu-mobile-icon img {
+        width: 30px;
+        height: auto;
+    }
+
+    .menu-mobile-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+/* Responsividade Desktopt */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* Responsividade  Desktops telas grandes */
+@media (min-width: 800px) and (max-width: 1280px) {
+    
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    
+}
