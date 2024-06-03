@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --color1: #3A1C1E;
+    --color2: #EDC89A;
+    --color3: #F27329;
+    --color4: #fff;
+    --color5: #102F80;
+    --color6: #FFA925;
+    --color7: #000;
+    --color8: #F2BB16;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* color: var(--color4); */
+    font-family: "Balsamiq Sans", sans-serif;
+    background-color: var(--color2);
+}
+
+.grid-form{
+    height: 100vh;
+    display: grid;
+    grid-template-areas:"header header header header"
+                        "banner bannner banner banner"
+                        "box-form1 box-form2 box-img box-img"
+                        "footer footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+header{
+    background-color: var(--color1);
+    grid-area: header;
+}
+
+.banner{
+    background-color: var(--color8);
+    grid-area: banner;
+}
+
+.box-form1{
+    background-color: var(--color7);
+    grid-area: box-form1;
+}
+
+.box-form2{
+    background-color: var(--color7);
+    grid-area: box-form2;
+}
+
+.box-img{
+    background-color: var(--color3);
+    grid-area: box-img;
+}
+
+footer{
+    background-color: var(--color5);
+    grid-area: footer;
+}
